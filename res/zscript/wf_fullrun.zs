@@ -23,7 +23,8 @@ extend class WadFusionStaticHandler
 	void FullRun()
 	{
 		int fullRun = CVar.FindCVar("wf_fullrun").GetInt();
-		int fullRunCast = CVar.FindCVar("wf_fullrun_cast").GetBool();
+		let fullRunCast = CVar.FindCVar("wf_fullrun_cast").GetBool();
+		let fullRunML = CVar.FindCVar("wf_fullrun_ml").GetBool();
 		let rejects = CVar.FindCVar("wf_map_mlr").GetBool();
 		let titlePic = CVar.FindCVar("wf_compat_titlepics").GetBool();
 		string mapName = Level.MapName.MakeLower();
@@ -208,7 +209,7 @@ extend class WadFusionStaticHandler
 			}
 			if ( mapName == "map30" )
 			{
-				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 )
+				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 && fullRunML )
 					nextMap = "wf_newgame_ml_map01";
 				else if ( Wads.CheckNumForFullName("maps/nv_map01.wad") != -1 )
 					nextMap = "wf_newgame_nv_map01";
@@ -315,7 +316,7 @@ extend class WadFusionStaticHandler
 				else
 					FullRunEnd();
 			if ( mapName == "e4m8" )
-				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 )
+				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 && fullRunML )
 					nextMap = "wf_newgame_ml_map01";
 				else if ( Wads.CheckNumForFullName("maps/tn_map01.wad") != -1 )
 					nextMap = "wf_newgame_tn_map01";
@@ -488,7 +489,7 @@ extend class WadFusionStaticHandler
 				else
 					FullRunEnd();
 			if ( mapName == "nv_map08" )
-				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 )
+				if ( Wads.CheckNumForFullName("maps/ml_map01.wad") != -1 && fullRunML )
 					nextMap = "wf_newgame_ml_map01";
 				else if ( Wads.CheckNumForFullName("maps/tn_map01.wad") != -1 )
 					nextMap = "wf_newgame_tn_map01";

@@ -31,6 +31,7 @@ extend class WadFusionStaticHandler
 		CVar.FindCVar("wf_map_mlr_story").ResetToDefault();
 		CVar.FindCVar("wf_intros").ResetToDefault();
 		CVar.FindCVar("wf_fullrun").ResetToDefault();
+		CVar.FindCVar("wf_fullrun_ml").ResetToDefault();
 		CVar.FindCVar("wf_fullrun_cast").ResetToDefault();
 		CVar.FindCVar("wf_fullrun_loop").ResetToDefault();
 		CVar.FindCVar("wf_id24trans").ResetToDefault();
