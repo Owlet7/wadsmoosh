@@ -430,11 +430,11 @@ def declare_data_sigil():
     # help the initial source wad reporting find sigil by any of its released names
     SIGIL_FILENAMES = ['sigil', 'sigil_v1_23', 'sigil_v1_21', 'sigil_v1_2', 'sigil_v1_1', 'sigil_v1_0']
     # sigil version with MP3 music
-    SIGIL_MP3_FILENAMES = ['sigil_shreds', 'sigil_v1_23_reg']
+    SIGIL_MP3_FILENAMES = ['sigil_shreds', 'sigil_mp3', 'sigil_v1_23_reg']
     # same for sigil2 - version with MIDI music
     SIGIL2_FILENAMES = ['sigil2', 'sigil_ii_v1_0']
     # sigil2 version with MP3 music (no sigil_shreds equivalent; MP3 music just an alternate wad)
-    SIGIL2_MP3_FILENAMES = ['sigil2_mp3', 'sigil_ii_mp3_v1_0']
+    SIGIL2_MP3_FILENAMES = ['sigil2_shreds', 'sigil2_mp3', 'sigil_ii_mp3_v1_0']
 
 def should_deflate():
     if args.deflate:
