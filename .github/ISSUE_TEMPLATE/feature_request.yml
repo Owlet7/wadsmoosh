@@ -3,17 +3,19 @@ description: Suggest an idea
 title: "[Feature] "
 labels: ["enhancement"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ### Please do not request support for any unofficial or console exclusive content. ###
-        **All such requests will be closed without comment.**
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
       description: Please search to see if an issue already exists for the feature you're requesting.
       options:
       - label: I have searched the existing issues
+        required: true
+  - type: checkboxes
+    attributes:
+      label: Are you requesting that support for more WADs be added?
+      description: Please do not request support for any unofficial or console exclusive content. Such requests will be closed without comment.
+      options:
+      - label: I am NOT requesting support for unofficial or console exclusive content.
         required: true
   - type: input
     attributes:
