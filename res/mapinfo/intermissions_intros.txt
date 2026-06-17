@@ -10,7 +10,7 @@ intermission Doom1_Intro
 	TextScreen
 	{
 		Text = "$D1INTRO1"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	
@@ -50,7 +50,7 @@ intermission Sigil_Intro
 	TextScreen
 	{
 		Text = "$E5INTRO"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 }
@@ -60,7 +60,7 @@ intermission Sigil2_Intro
 	TextScreen
 	{
 		Text = "$E6INTRO"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 }
@@ -70,7 +70,7 @@ intermission Doom2_Intro
 	TextScreen
 	{
 		Text = "$D2INTRO1"
-		Background = "$GRNROCK", 1
+		Background = "GRNROCK", 1
 		Music = "$MUSIC_READ_M"
 	}
 	
@@ -110,7 +110,7 @@ intermission Nerve_Intro
 	TextScreen
 	{
 		Text = "$NVINTRO"
-		Background = "$GRNROCK", 1
+		Background = "GRNROCK", 1
 		Music = "$MUSIC_READ_M"
 	}
 }
@@ -120,7 +120,7 @@ intermission Id1_Intro
 	TextScreen
 	{
 		Text = "$ID1INTRO1"
-		Background = "$GRNROCK", 1
+		Background = "GRNROCK", 1
 		Music = "D_SHORES"
 	}
 	
@@ -135,7 +135,7 @@ intermission Tnt_Intro
 	TextScreen
 	{
 		Text = "$TNINTRO1"
-		Background = "$GRNROCK", 1
+		Background = "GRNROCK", 1
 		Music = "T_READ_M"
 	}
 	
@@ -180,7 +180,7 @@ intermission Plutonia_Intro
 	TextScreen
 	{
 		Text = "$PLINTRO1"
-		Background = "$GRNROCK", 1
+		Background = "GRNROCK", 1
 		Music = "P_READ_M"
 	}
 	

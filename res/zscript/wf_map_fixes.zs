@@ -38,7 +38,7 @@ class WadFusionMapFixes : LevelPostProcessor
 					SetLineSpecial(268, Exit_Secret, 0);
 					break;
 				}
-				case 'AB24AE6E2CB13CBDD04600A4D37F9189': // Doom II MAP01
+				case 'AB24AE6E2CB13CBDD04600A4D37F9189': // Doom II MAP02
 				{
 					SetLineActivation(283, SPAC_Use);
 					SetLineSpecial(283, Exit_Secret, 0);

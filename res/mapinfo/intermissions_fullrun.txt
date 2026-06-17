@@ -275,7 +275,7 @@ intermission Doom1_Ep5_Fusion_FullRun
 	TextScreen
 	{
 		Text = "$E5TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}
@@ -295,7 +295,7 @@ intermission Doom1_Ep5_Fusion_FullRun_Off
 	TextScreen
 	{
 		Text = "$E5TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}
@@ -318,7 +318,7 @@ intermission Doom1_Ep6_Fusion_FullRun
 	TextScreen
 	{
 		Text = "$E6TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}
@@ -338,7 +338,7 @@ intermission Doom1_Ep6_Fusion_FullRun_Off
 	TextScreen
 	{
 		Text = "$E6TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}

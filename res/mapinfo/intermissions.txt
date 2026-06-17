@@ -57,7 +57,7 @@ intermission Doom1_Ep5_Fusion
 	TextScreen
 	{
 		Text = "$E5TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}
@@ -74,7 +74,7 @@ intermission Doom1_Ep6_Fusion
 	TextScreen
 	{
 		Text = "$E6TEXT"
-		Background = "$FLOOR7_2", 1
+		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
 	Wiper {}
