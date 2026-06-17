@@ -1,5 +1,16 @@
 # WadFusion Changelog
 
+## Unreleased Changes
+[**Full Changelog**](https://github.com/Owlet7/wadfusion/compare/v1.6.1...HEAD)
+- Added "Master Levels in Full Run" option.
+- Made all "forced" pistol starts optional.
+  - This means that if you absolutely do not want to play the game with the
+    intended progression, you can disable the "Pistol start scripts"
+    compatibility option and have a persistent inventory through all of the
+    Master Levels, or through all of the 220 levels in Full Run.
+- Added support for "sigil_mp3" and "sigil2_shreds" filenames.
+- Added Italian localisation (by STHX).
+
 ## [WadFusion 1.6.1](https://github.com/Owlet7/wadfusion/releases/tag/v1.6.1) — [18 May 2026](https://github.com/Owlet7/wadfusion/tree/v1.6.1)
 [**Full Changelog**](https://github.com/Owlet7/wadfusion/compare/v1.6.0...v1.6.1)
 - HOTFIX: Added support for LZDoom 4.14.3a.

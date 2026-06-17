@@ -141,12 +141,18 @@ extend class WadFusionStaticHandler
 	void NewGameChangeLevel()
 	{
 		string mapName = Level.MapName.MakeLower();
+		let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+		let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+		
 		if ( mapName.Left(10) == "wf_newgame" )
-			Level.ChangeLevel(nextMap, 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+			Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 	}
 	
 	void NewGameChangeLevelInput()
 	{
+		let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+		let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+		
 		if ( CVar.FindCVar("wf_intros").GetBool() )
 		{
 			if ( nextMap == "e1m1" ||
@@ -157,11 +163,13 @@ extend class WadFusionStaticHandler
 				 nextMap == "lr_map01" ||
 				 nextMap == "tn_map01" ||
 				 nextMap == "pl_map01" )
-				Level.ChangeLevel("wf_story", 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+			{
+				Level.ChangeLevel("wf_story", 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
+			}
 			else
-				Level.ChangeLevel(nextMap, 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+				Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 		}
 		else
-			Level.ChangeLevel(nextMap, 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+			Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 	}
 }

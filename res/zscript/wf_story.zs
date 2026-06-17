@@ -27,6 +27,9 @@ extend class WadFusionStaticHandler
 		
 		if ( mapName.Left(8) == "wf_story" )
 		{
+			let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+			let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+			
 			if ( mapName.Mid(9, 6) != "ml_map" )
 			{
 				// play episode into stories
@@ -58,7 +61,7 @@ extend class WadFusionStaticHandler
 				if ( Level.MapTime >= 1 )
 				{
 					if ( !fullRunFinished )
-						Level.ChangeLevel(nextMap, 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+						Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 					// try changing to a level that doesn't exist
 					// this triggets the default ending sequence -- Fusion_GotoTitle
 					else if ( !multiplayer )
@@ -81,7 +84,7 @@ extend class WadFusionStaticHandler
 						 mapSuffix == "16" || mapSuffix == "17" ||
 						 mapSuffix == "33" || mapSuffix == "19" )
 					{
-						Level.ChangeLevel(nextMap, 0, CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION);
+						Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 					}
 					else
 						Level.ChangeLevel(nextMap, 0, CHANGELEVEL_NOINTERMISSION);
@@ -105,7 +108,10 @@ extend class WadFusionStaticHandler
 		if ( mapName == "wf_story" && Level.MapTime == 0 )
 		{
 			if ( fullRunFinished && multiplayer )
-				ForcePistolStart();
+			{
+				if ( CVar.FindCVar("wf_compat_pistolstart").GetBool() )
+					ForcePistolStart();
+			}
 		}
 	}
 	

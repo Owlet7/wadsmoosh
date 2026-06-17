@@ -29,9 +29,6 @@ map ML_MAP19 "$ML_BLOODSEA"
 	TitlePatch = "MWILV18", 1
 	Music = "$MUSIC_SHAWN"
 	Map07Special
-	ResetHealth
-	ResetInventory
-	ResetItems
 }
 
 map ML_MAP20 "$ML_MEPHISTO"

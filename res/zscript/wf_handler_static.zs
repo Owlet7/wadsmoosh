@@ -82,14 +82,20 @@ class WadFusionStaticHandler : StaticEventHandler
 		// and the rejects order, in which they shouldn't
 		if ( CVar.FindCVar("wf_compat_pistolstart").GetBool() )
 		{
-			if ( !CVar.FindCVar("wf_map_mlr").GetBool() )
+			string nextMapName = Level.NextMap.MakeLower();
+			
+			if ( nextMapName.Left(6) == "ml_map" )
 			{
-				if ( Level.NextMap == "ml_map10" || Level.NextMap == "ml_map11" ||
-					 Level.NextMap == "ml_map12" || Level.NextMap == "ml_map13" ||
-					 Level.NextMap == "ml_map14" || Level.NextMap == "ml_map15" || 
-					 Level.NextMap == "ml_map18" || Level.NextMap == "ml_map20" )
+				array<int> mlNoPistolStarts;
+				mlNoPistolStarts.PushV(21, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43);
+				
+				if ( CVar.FindCVar("wf_map_mlr").GetBool() )
+					mlNoPistolStarts.PushV(10, 11, 12, 13, 14, 15, 18, 20);
+				
+				for ( int i = 0; i < mlNoPistolStarts.Size(); i++ )
 				{
-					ForcePistolStart();
+					if ( nextMapName.Mid(7) != String.Format("%i", mlNoPistolStarts[i]) )
+						ForcePistolStart();
 				}
 			}
 		}
