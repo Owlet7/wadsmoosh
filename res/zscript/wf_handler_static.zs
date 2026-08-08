@@ -28,12 +28,6 @@ class WadFusionStaticHandler : StaticEventHandler
 		Console.Printf(StringTable.Localize("$WF_TITLE").." version "..WF_VERSION);
 	}
 	
-	override void OnEngineInitialize()
-	{
-		if ( Wads.CheckNumForFullName("music/d_dm2ttl.mus") == -1 )
-			S_ChangeMusic("d_intro", 0, false);
-	}
-	
 	override void PostUiTick()
 	{
 		if ( CVar.FindCVar("wf_compat_changemusic").GetBool() )
