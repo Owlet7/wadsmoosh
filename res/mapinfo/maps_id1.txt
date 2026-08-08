@@ -27,6 +27,7 @@ defaultmap
 map LR_MAP99 "$XHUSTR_99"
 {
 	Next = "LR_MAP99"
+	TitlePatch = "XWILV99", 1
 	Sky1 =  "SKYX2"
 	Music = "D_BLANK"
 	Author = "$WF_AU_ID1TEST"

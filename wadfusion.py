@@ -185,7 +185,7 @@ def declare_data():
         'graphics/MWILV36.lmp', 'graphics/MWILV37.lmp',
         'graphics/MWILV38.lmp', 'graphics/MWILV39.lmp',
         'graphics/MWILV40.lmp', 'graphics/MWILV41.lmp',
-        'graphics/MWILV42.lmp',
+        'graphics/MWILV42.lmp', 'graphics/XWILV99.lmp',
         'texdefs/fusion.txt',
         'texdefs/common.txt',
         'texdefs/doom1.txt',
