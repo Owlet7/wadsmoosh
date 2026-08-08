@@ -194,4 +194,4 @@ nosave float wf_hud_alt_alpha_weapinv = 1.0;
 nosave float wf_hud_alt_alpha_keys = 1.0;
 nosave float wf_hud_alt_alpha_frags = 1.0;
 nosave float wf_hud_alt_alpha_stats = 0.4;
-nosave float wf_hud_alt_alpha_info = 0.2;
+nosave float wf_hud_alt_alpha_info = 0.4;

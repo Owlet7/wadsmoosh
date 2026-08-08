@@ -80,6 +80,9 @@ extend class WadFusionStatusBar
 		
 		if ( altHUDHealth )
 		{
+			if ( multiplayer )
+				DrawImage("STFBANY", (3 + ultraWide, -35 - healthPosYOffset), DI_ITEM_OFFSETS|DI_SCREEN_LEFT_BOTTOM|DI_TRANSLATABLE, healthAlpha);
+			
 			if ( !altHUDMugshotReplace )
 				DrawImage(hasBerserk ? "PSTRA0" : "MEDIA0", (20 + ultraWide, -10 - healthPosYOffset), DI_SCREEN_LEFT_BOTTOM, healthAlpha);
 			else
