@@ -13,7 +13,6 @@ defaultmap
 	compat_mbfmonstermove = 0
 	compat_multiexit = 0
 	compat_nodoorlight = 0
-	compat_nombf21 = 0
 	compat_pointonline = 0
 	compat_pushwindow = 0
 	compat_railing = 0
