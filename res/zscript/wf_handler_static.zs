@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright 2024-2025 Owlet VII
+// Copyright 2024-2026 Owlet VII
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -22,8 +22,6 @@ class WadFusionStaticHandler : StaticEventHandler
 {
 	String nextMap;
 	String intermission;
-	bool fullRunNewGame;
-	bool fullRunFinished;
 	
 	override void OnRegister()
 	{
@@ -54,9 +52,6 @@ class WadFusionStaticHandler : StaticEventHandler
 	
 	override void NetworkProcess(ConsoleEvent e)
 	{
-		if (e.Name ~== "NewGameChangeLevelInputEvent")
-			NewGameChangeLevelInput(); // wf_newgame.zs
-		
 		if (e.Name ~== "IntermissionStoryEvent")
 			Level.StartIntermission(intermission, FSTATE_INLEVELNOWIPE);
 	}
@@ -65,12 +60,10 @@ class WadFusionStaticHandler : StaticEventHandler
 	{
 		// reset global variables when starting maps where they're not used
 		string mapName = Level.MapName.MakeLower();
-		if ( mapName.Left(10) != "wf_newgame" && mapName.Left(8) != "wf_story" )
+		if ( mapName.Left(10) != "wf_newgame" && mapName.Left(10) != "wf_endgame" && mapName.Left(8) != "wf_story" )
 		{
 			nextMap = "";
 			intermission = "";
-			fullRunNewGame = false;
-			fullRunFinished = false;
 		}
 	}
 	
@@ -95,7 +88,10 @@ class WadFusionStaticHandler : StaticEventHandler
 				for ( int i = 0; i < mlNoPistolStarts.Size(); i++ )
 				{
 					if ( nextMapName.Mid(7) != String.Format("%i", mlNoPistolStarts[i]) )
+					{
 						ForcePistolStart();
+						continue;
+					}
 				}
 			}
 		}
@@ -109,34 +105,18 @@ class WadFusionStaticHandler : StaticEventHandler
 		if ( CVar.FindCVar("wf_compat_nextmap").GetBool() )
 			FullRunStory(); // wf_fullrun.zs
 		
+		// wf_story.zs
 		// very hacky methods of adding optional titlescreens
 		// and story intermissions when starting new games
-		// saving and loading on the hack dummy maps will break these sequences!
-		NewGameIntro(); // wf_newgame.zs
-		IntermissionStory(); // wf_story.zs
-		
-		FullRunMultiplayerTakeStuff(); // wf_story.zs
+		NewGameIntro();
+		MasterLevelsStory();
+		FullRunIntermission();
 	}
 	
 	override void RenderOverlay(RenderEvent e)
 	{
-		NewGameTitlePic(); // wf_newgame.zs
-		FullRunMultiplayer(); // wf_story.zs
-	}
-	
-	override bool InputProcess(InputEvent e)
-	{
-		// press any key on the hacky titlescreens to continue
-		if ( CVar.FindCVar("wf_compat_titlepics").GetBool() )
-		{
-			string mapName = Level.MapName.MakeLower();
-			if ( mapName.Left(10) == "wf_newgame" && mapName != "wf_newgame" )
-			{
-				if (e.Type == InputEvent.Type_KeyDown)
-					EventHandler.SendNetworkEvent("NewGameChangeLevelInputEvent");
-			}
-		}
-		return false;
+		// wf_story.zs
+		HackMapsOverlay();
 	}
 	
 	void ForcePistolStart()

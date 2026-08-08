@@ -3,7 +3,25 @@
 
 // New Game intros
 
-intermission WadFusionNewGame {}
+intermission Doom1_Title
+{
+	Image
+	{
+		Background = "TITLED1"
+		Music = "NULL"
+	}
+}
+
+intermission Doom1_Title_Intro
+{
+	Image
+	{
+		Background = "TITLED1"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Doom1_Intro
+}
 
 intermission Doom1_Intro
 {
@@ -45,6 +63,35 @@ intermission Doom1_Intro
 	}
 }
 
+intermission UltimateDoom_Title
+{
+	Image
+	{
+		Background = "TITLEUD"
+		Music = "NULL"
+	}
+}
+
+intermission Sigil_Title
+{
+	Image
+	{
+		Background = "TITLES1"
+		Music = "NULL"
+	}
+}
+
+intermission Sigil_Title_Intro
+{
+	Image
+	{
+		Background = "TITLES1"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Sigil_Intro
+}
+
 intermission Sigil_Intro
 {
 	TextScreen
@@ -55,6 +102,26 @@ intermission Sigil_Intro
 	}
 }
 
+intermission Sigil2_Title
+{
+	Image
+	{
+		Background = "TITLES2"
+		Music = "NULL"
+	}
+}
+
+intermission Sigil2_Title_Intro
+{
+	Image
+	{
+		Background = "TITLES2"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Sigil2_Intro
+}
+
 intermission Sigil2_Intro
 {
 	TextScreen
@@ -63,6 +130,26 @@ intermission Sigil2_Intro
 		Background = "FLOOR7_2", 1
 		Music = "$MUSIC_VICTOR"
 	}
+}
+
+intermission Doom2_Title
+{
+	Image
+	{
+		Background = "TITLED2"
+		Music = "NULL"
+	}
+}
+
+intermission Doom2_Title_Intro
+{
+	Image
+	{
+		Background = "TITLED2"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Doom2_Intro
 }
 
 intermission Doom2_Intro
@@ -105,6 +192,35 @@ intermission Doom2_Intro
 	}
 }
 
+intermission MasterLevels_Title
+{
+	Image
+	{
+		Background = "TITLEML"
+		Music = "NULL"
+	}
+}
+
+intermission Nerve_Title
+{
+	Image
+	{
+		Background = "TITLED2"
+		Music = "NULL"
+	}
+}
+
+intermission Nerve_Title_Intro
+{
+	Image
+	{
+		Background = "TITLED2"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Nerve_Intro
+}
+
 intermission Nerve_Intro
 {
 	TextScreen
@@ -113,6 +229,26 @@ intermission Nerve_Intro
 		Background = "GRNROCK", 1
 		Music = "$MUSIC_READ_M"
 	}
+}
+
+intermission Id1_Title
+{
+	Image
+	{
+		Background = "TITLELR"
+		Music = "NULL"
+	}
+}
+
+intermission Id1_Title_Intro
+{
+	Image
+	{
+		Background = "TITLELR"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Id1_Intro
 }
 
 intermission Id1_Intro
@@ -128,6 +264,26 @@ intermission Id1_Intro
 	{
 		Text = "$ID1INTRO2"
 	}
+}
+
+intermission Tnt_Title
+{
+	Image
+	{
+		Background = "TITLETN"
+		Music = "NULL"
+	}
+}
+
+intermission Tnt_Title_Intro
+{
+	Image
+	{
+		Background = "TITLETN"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Tnt_Intro
 }
 
 intermission Tnt_Intro
@@ -173,6 +329,26 @@ intermission Tnt_Intro
 	{
 		Text = "$TNINTRO8"
 	}
+}
+
+intermission Plutonia_Title
+{
+	Image
+	{
+		Background = "TITLEPL"
+		Music = "NULL"
+	}
+}
+
+intermission Plutonia_Title_Intro
+{
+	Image
+	{
+		Background = "TITLEPL"
+		Music = "NULL"
+	}
+	Wiper {}
+	Link = Plutonia_Intro
 }
 
 intermission Plutonia_Intro

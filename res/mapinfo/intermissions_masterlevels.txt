@@ -3,8 +3,6 @@
 
 // Master Levels story
 
-// map wf_story_ml_map29
-
 intermission MasterLevels_Map29
 {
 	TextScreen

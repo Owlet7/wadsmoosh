@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright 2025 Owlet VII
+// Copyright 2025-2026 Owlet VII
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -21,74 +21,187 @@
 // everything here is a gross hack
 extend class WadFusionStaticHandler
 {
-	void IntermissionStory()
+	
+	string GetSigilIntroMusic()
+	{
+		if ( CVar.FindCVar("wf_mus_sigilmp3").GetBool() )
+			return "s_introa";
+		else
+			return "s_intro";
+	}
+	
+	string GetSigil2IntroMusic()
+	{
+		if ( CVar.FindCVar("wf_mus_sigil2mp3").GetBool() )
+			return "s2_intra";
+		else
+			return "s2_intro";
+	}
+	
+	ui void HackMapsOverlay()
 	{
 		string mapName = Level.MapName.MakeLower();
-		
-		if ( mapName.Left(8) == "wf_story" )
+		if ( mapName.Left(10) == "wf_newgame" || mapName.Left(10) == "wf_endgame" || mapName.Left(8) == "wf_story" )
 		{
+			Level.SetFrozen(true);
+			Screen.DrawTexture(TexMan.CheckForTexture("TITLEPIC"), false, 0, 0, DTA_FullScreen, 1);
+		}
+	}
+	
+	void NewGameIntro()
+	{
+		string mapName = Level.MapName.MakeLower();
+		let compatTitlePics = CVar.FindCVar("wf_compat_titlepics").GetBool();
+		
+		if ( mapName.Left(10) == "wf_newgame" )
+		{
+			nextMap = mapName.Mid(11);
+			
+			string newGameEpisodes[] =
+			{
+				"e1m1",
+				"e2m1",
+				"e3m1",
+				"e4m1",
+				"e5m1",
+				"e6m1",
+				"map01",
+				"ml_map01",
+				"nv_map01",
+				"lr_map01",
+				"lr_map08",
+				"tn_map01",
+				"pl_map01"
+			};
+			
+			string newGameTitleMus[] =
+			{
+				"d_intro",
+				"d_intro",
+				"d_intro",
+				"d_intro",
+				GetSigilIntroMusic(),
+				GetSigil2IntroMusic(),
+				"d_dm2ttl",
+				"d_dm2ttl",
+				"d_dm2ttl",
+				"x_dm2ttl",
+				"x_dm2ttl",
+				"t_dm2ttl",
+				"p_dm2ttl"
+			};
+			
+			string newGameTitle[] =
+			{
+				"Doom1_Title",
+				"Doom1_Title",
+				"Doom1_Title",
+				"UltimateDoom_Title",
+				"Sigil_Title",
+				"Sigil2_Title",
+				"Doom2_Title",
+				"MasterLevels_Title",
+				"Nerve_Title",
+				"Id1_Title",
+				"Id1_Title",
+				"Tnt_Title",
+				"Plutonia_Title"
+			};
+			
+			string newGameTitleIntro[] =
+			{
+				"Doom1_Title_Intro",
+				"Doom1_Title",
+				"Doom1_Title",
+				"UltimateDoom_Title",
+				"Sigil_Title_Intro",
+				"Sigil2_Title_Intro",
+				"Doom2_Title_Intro",
+				"MasterLevels_Title",
+				"Nerve_Title_Intro",
+				"Id1_Title_Intro",
+				"Id1_Title",
+				"Tnt_Title_Intro",
+				"Plutonia_Title_Intro"
+			};
+			
 			let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
 			let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
 			
-			if ( mapName.Mid(9, 6) != "ml_map" )
+			// this whole thing is very delicate and will break if anything at all is changed
+			if ( Level.MapTime == 0 )
 			{
-				// play episode into stories
-				if ( nextMap == "e1m1" )
-					intermission = "Doom1_Intro";
-				else if ( nextMap == "e5m1" )
-					intermission = "Sigil_Intro";
-				else if ( nextMap == "e6m1" )
-					intermission = "Sigil2_Intro";
-				else if ( nextMap == "map01" )
-					intermission = "Doom2_Intro";
-				else if ( nextMap == "nv_map01" )
-					intermission = "Nerve_Intro";
-				else if ( nextMap == "lr_map01" )
-					intermission = "Id1_Intro";
-				else if ( nextMap == "tn_map01" )
-					intermission = "Tnt_Intro";
-				else if ( nextMap == "pl_map01" )
-					intermission = "Plutonia_Intro";
-				
-				StoryStartIntermission();
-				
-				// don't skip the screen wipe when loading a newgame hack map
-				int fullRun = CVar.FindCVar("wf_fullrun").GetInt();
-				if ( fullRun >= 1 && fullRun <= 3 )
-					fullRunNewGame = true;
-				
-				// change to the map which was set in NewGameIntro() or FullRun()
-				if ( Level.MapTime >= 1 )
+				for ( int i = 0; i < newGameEpisodes.Size(); i++ )
 				{
-					if ( !fullRunFinished )
-						Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
-					// try changing to a level that doesn't exist
-					// this triggets the default ending sequence -- Fusion_GotoTitle
-					else if ( !multiplayer )
-						Level.ChangeLevel("", 0, CHANGELEVEL_NOINTERMISSION);
+					if ( nextMap == newGameEpisodes[i] )
+					{
+						if ( compatTitlePics )
+							S_ChangeMusic(newGameTitleMus[i], 0, false);
+						
+						if ( CVar.FindCVar("wf_intros").GetBool() )
+							intermission = newGameTitleIntro[i];
+						else
+							intermission = newGameTitle[i];
+						
+						continue;
+					}
 				}
 			}
-			else
+			
+			StoryStartIntermission();
+			
+			if ( compatTitlePics && Level.MapTime >= 1 || !compatTitlePics )
+				Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
+		}
+	}
+	
+	void MasterLevelsStory()
+	{
+		string mapName = Level.MapName.MakeLower();
+		
+		if ( mapName.Left(15) == "wf_story_ml_map" )
+		{
+			string mapSuffix = mapName.Mid(15, 2);
+			nextMap = "ml_map"..mapSuffix;
+			intermission = "MasterLevels_Map"..mapSuffix;
+			
+			StoryStartIntermission();
+			
+			if ( Level.MapTime >= 1 )
 			{
-				// hack for adding optional story intermissions in the master levels rejects
-				string mapSuffix = mapName.Mid(15, 2);
-				intermission = "MasterLevels_Map"..mapSuffix;
-				nextMap = "ml_map"..mapSuffix;
+				int mlStoryPistolStarts[] = { 29, 30, 31, 32, 16, 17, 33, 19 };
+				let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+				let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
 				
-				StoryStartIntermission();
-				
-				if ( Level.MapTime >= 1 )
+				for ( int i = 0; i < mlStoryPistolStarts.Size(); i++ )
 				{
-					if ( mapSuffix == "29" || mapSuffix == "30" ||
-						 mapSuffix == "31" || mapSuffix == "32" ||
-						 mapSuffix == "16" || mapSuffix == "17" ||
-						 mapSuffix == "33" || mapSuffix == "19" )
+					if ( mapSuffix == String.Format("%i", mlStoryPistolStarts[i]) )
 					{
 						Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
+						continue;
 					}
-					else
-						Level.ChangeLevel(nextMap, 0, CHANGELEVEL_NOINTERMISSION);
 				}
+				
+				Level.ChangeLevel(nextMap, 0, CHANGELEVEL_NOINTERMISSION);
+			}
+		}
+	}
+	
+	void FullRunIntermission()
+	{
+		string mapName = Level.MapName.MakeLower();
+		
+		if ( mapName.Left(10) == "wf_endgame" )
+		{
+			StoryStartIntermission();
+			
+			if ( Level.MapTime >= 1 )
+			{
+				int mlStoryPistolStarts[] = { 29, 30, 31, 32, 16, 17, 33, 19 };
+				let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+				let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+				
+				Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 			}
 		}
 	}
@@ -99,30 +212,5 @@ extend class WadFusionStaticHandler
 			Level.StartIntermission(intermission, FSTATE_INLEVELNOWIPE);
 		else if ( Level.MapTime == 0 )
 			EventHandler.SendNetworkEvent("IntermissionStoryEvent");
-	}
-	
-	void FullRunMultiplayerTakeStuff()
-	{
-		string mapName = Level.MapName.MakeLower();
-		
-		if ( mapName == "wf_story" && Level.MapTime == 0 )
-		{
-			if ( fullRunFinished && multiplayer )
-			{
-				if ( CVar.FindCVar("wf_compat_pistolstart").GetBool() )
-					ForcePistolStart();
-			}
-		}
-	}
-	
-	ui void FullRunMultiplayer()
-	{
-		string mapName = Level.MapName.MakeLower();
-		
-		if ( mapName == "wf_story" )
-		{
-			if ( fullRunFinished && multiplayer )
-				Screen.DrawText(smallfont, Font.CR_UNTRANSLATED, 1, 1, "$WF_FULLRUN_END_MULTIPLAYER", DTA_320x200, true);
-		}
 	}
 }

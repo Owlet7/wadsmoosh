@@ -3,11 +3,16 @@
 ## Unreleased Changes
 [**Full Changelog**](https://github.com/Owlet7/wadfusion/compare/v1.6.1...HEAD)
 - Added "Master Levels in Full Run" option.
+- Rewrote how the title screens and episode endings are handled.
+  - Time spent on title screens won't be added to the total time played.
+  - Title screens won't create broken autosaves.
+  - The titlepic won't be shown for one tick when title screens are disabled.
 - Made all "forced" pistol starts optional.
   - This means that if you absolutely do not want to play the game with the
     intended progression, you can disable the "Pistol start scripts"
     compatibility option and have a persistent inventory through all of the
     Master Levels, or through all of the 220 levels in Full Run.
+- Players will now disconnect from a server at the end of a Full Run.
 - Added support for "sigil_mp3" and "sigil2_shreds" filenames.
 - Added Italian localisation (by STHX).
 

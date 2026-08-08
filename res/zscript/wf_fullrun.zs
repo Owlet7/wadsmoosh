@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// Copyright 2025 Owlet VII
+// Copyright 2025-2026 Owlet VII
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@ extend class WadFusionStaticHandler
 		let fullRunCast = CVar.FindCVar("wf_fullrun_cast").GetBool();
 		let fullRunML = CVar.FindCVar("wf_fullrun_ml").GetBool();
 		let rejects = CVar.FindCVar("wf_map_mlr").GetBool();
-		let titlePic = CVar.FindCVar("wf_compat_titlepics").GetBool();
 		string mapName = Level.MapName.MakeLower();
 		
 		// set which intermission to play at the end of an episode
@@ -107,7 +106,7 @@ extend class WadFusionStaticHandler
 			if ( mapName == "map30" )
 				intermission = "Inter_Cast";
 			if ( ( mapName == "ml_map20" && !rejects ) || mapName == "ml_map43" )
-				intermission = "MasterLevels_End"; // also needed for xaser order
+				intermission = "MasterLevels_End";
 			if ( mapName == "nv_map08" )
 				intermission = "Inter_Cast";
 			if ( mapName == "lr_map07" )
@@ -540,7 +539,7 @@ extend class WadFusionStaticHandler
 			 mapName == "e5m8" ||
 			 mapName == "e6m8" ||
 			 mapName == "map30" ||
-			 ( mapName == "ml_map20" && !rejects ) || // also needed for xaser order
+			 ( mapName == "ml_map20" && !rejects ) ||
 			 mapName == "ml_map43" ||
 			 mapName == "nv_map08" ||
 			 mapName == "lr_map07" ||
@@ -548,7 +547,7 @@ extend class WadFusionStaticHandler
 			 mapName == "tn_map30" ||
 			 mapName == "pl_map30" )
 		{
-			Level.NextMap = "wf_story";
+			Level.NextMap = "wf_endgame_"..mapName;
 		}
 	}
 	
@@ -557,16 +556,14 @@ extend class WadFusionStaticHandler
 		int fullRun = CVar.FindCVar("wf_fullrun").GetInt();
 		let fullRunLoop = CVar.FindCVar("wf_fullrun_loop").GetBool();
 		
-		if ( !fullRunLoop )
-			fullRunFinished = true;
-		else
+		if ( fullRunLoop )
 		{
 			if ( fullRun == 1 )
 			{
 				if ( Wads.CheckNumForFullName("maps/e1m1.wad") != -1 )
 					nextMap = "wf_newgame_e1m1";
 				else if ( Wads.CheckNumForFullName("maps/e4m1.wad") != -1 )
-					nextMap = "wf_newgame_e5m1";
+					nextMap = "wf_newgame_e4m1";
 				else if ( Wads.CheckNumForFullName("maps/e5m1.wad") != -1 )
 					nextMap = "wf_newgame_e5m1";
 				else if ( Wads.CheckNumForFullName("maps/e6m1.wad") != -1 )

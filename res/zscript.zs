@@ -20,7 +20,7 @@
 
 version "4.14.3"
 
-const WF_VERSION = "1.6.1";
+const WF_VERSION = "1.6.2-dev";
 
 #include "zscript/wf_handler.zs"
 #include "zscript/wf_handler_static.zs"
@@ -33,7 +33,6 @@ const WF_VERSION = "1.6.1";
 #include "zscript/wf_sbar_alt.zs"
 #include "zscript/wf_masterlevels.zs"
 #include "zscript/wf_fullrun.zs"
-#include "zscript/wf_newgame.zs"
 #include "zscript/wf_story.zs"
 #include "zscript/wf_map_fixes.zs"
 #include "zscript/wf_defaults.zs"

@@ -88,7 +88,7 @@ extend class WadFusionHandler
 			if ( rejects )
 				Level.NextMap = "ml_map40";
 			else
-				Level.NextMap = "wf_story";
+				Level.NextMap = "wf_endgame_masterlevels";
 		}
 		if ( mapName == "ml_map18" || mapName == "ml_map21" )
 		{
