@@ -18,10 +18,8 @@
 //-----------------------------------------------------------------------------
 //
 
-// everything here is a gross hack
 extend class WadFusionStaticHandler
 {
-	
 	string GetSigilIntroMusic()
 	{
 		if ( CVar.FindCVar("wf_mus_sigilmp3").GetBool() )
@@ -197,7 +195,6 @@ extend class WadFusionStaticHandler
 			
 			if ( Level.MapTime >= 1 )
 			{
-				int mlStoryPistolStarts[] = { 29, 30, 31, 32, 16, 17, 33, 19 };
 				let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
 				let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
 				

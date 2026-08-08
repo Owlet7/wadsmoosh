@@ -100,8 +100,7 @@ class WadFusionStaticHandler : StaticEventHandler
 			FullRunStory(); // wf_fullrun.zs
 		
 		// wf_story.zs
-		// very hacky methods of adding optional titlescreens
-		// and story intermissions when starting new games
+		// hack for adding titlescreens and intermissions on newgame starts and "full runs"
 		NewGameIntro();
 		MasterLevelsStory();
 		FullRunIntermission();
