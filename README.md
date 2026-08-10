@@ -38,46 +38,71 @@ Here is the official list of WADs that WadFusion will recognize:
 - Master Levels Rejects ([see below](#master-levels-rejects) for a full list of supported WADs)
 - Final DOOM (`tnt.wad` and `plutonia.wad`)
 - No Rest for the Living (`nerve.wad`)
-- SIGIL (`sigil.wad` and its optional music addon `sigil_shreds.wad`)
-- SIGIL II (`sigil2.wad` and optionally its MP3 soundtrack version `sigil2_mp3.wad`)
+- SIGIL (`sigil.wad` and optionally its MP3 soundtrack version)
+- SIGIL II (`sigil2.wad` and optionally its MP3 soundtrack version)
 - Legacy of Rust (`id1.wad` and `iddm1.wad` from the [KEX-based re-release](https://doomwiki.org/wiki/Doom_%2B_Doom_II))
-- [Xbox secret levels](https://classicdoom.com/xboxspec.htm) (`sewers.wad` and `betray.wad` from the [original Xbox port of DOOM](https://doomwiki.org/wiki/Xbox))
-- [Tech Gone Bad](https://www.doomworld.com/idgames/levels/doom/Ports/d-f/e1m8b) and [Phobos Mission Control](https://www.doomworld.com/idgames/levels/doom/Ports/d-f/e1m4b) (`e1m8b.wad` and `e1m4b.wad`, John Romero's map remakes)
+- Xbox secret levels (`sewers.wad` and `betray.wad` from the [original Xbox port of DOOM](https://doomwiki.org/wiki/Xbox))
+- Tech Gone Bad and Phobos Mission Control (`e1m8b.wad` and `e1m4b.wad`, John Romero's map remakes)
 - Extras (`extras.wad` from the [Unity](https://doomwiki.org/wiki/Doom_Classic_Unity_port) or [KEX-based](https://doomwiki.org/wiki/Doom_%2B_Doom_II) re-releases)
 
 If IWADs from the Unity or KEX-based re-releases are also included (must be named `doomunity.wad`, `doom2unity.wad`, `tntunity.wad`, `plutoniaunity.wad` or `doomkex.wad`, `doom2kex.wad`, `tntkex.wad`, `plutoniakex.wad`), WadFusion will extract the official widescreen assets from them. These versions can also be used as the main IWADs for extraction, but do keep in mind that they are censored, and that WadFusion already comes with optional super-ultrawide assets.
 
-If `extras.wad` from the re-releases is included, WadFusion will extract the official "secret revealed" sound, and some status bar icons that can be used by the custom alternate fullscreen HUD. If the version from the KEX-based re-release is used, WadFusion will also extract Andrew Hulshult's "IDKFA" covers of the DOOM and DOOM II soundtracks, which can be toggled from the WadFusion options menu in ZDoom.
+If `extras.wad` from the re-releases is included, WadFusion will extract the official "secret revealed" sound, and some status bar icons that can be used by the custom alternate fullscreen HUD. If the version from the KEX-based re-release is used, WadFusion will also extract Andrew Hulshult's "IDKFA" covers of the DOOM and DOOM II soundtracks, which can be toggled from the WadFusion options menu.
 
 None of the "official add-on" content from the Unity or KEX-based re-releases of DOOM and DOOM II is supported.
 
-For SIGIL and SIGIL II, all the filenames for different releases of those WADs are also recognized; you shouldn't have to rename your original files. If `sigil_shreds.wad` is included, or if both versions of SIGIL II are included, WadFusion will extract both soundtracks, which can be toggled from the WadFusion options menu in ZDoom. The MP3 version of SIGIL II isn't supported on its own, the MIDI version must be included alongside it.
+For SIGIL and SIGIL II, all the filenames for different releases of those WADs are also recognized; you shouldn't have to rename your original files. If the registered versions of SIGIL or SIGIL II are included, WadFusion will extract both MIDI and MP3 soundtracks from them, which can be toggled from the WadFusion options menu. The MP3 versions aren't supported on their own, the MIDI versions must be included alongside them.
 
-[Tech Gone Bad](https://doomwiki.org/wiki/Tech_Gone_Bad) and [Phobos Mission Control](https://doomwiki.org/wiki/Phobos_Mission_Control) are levels that were made as a warm-up exercise for John Romero's cancelled game, Blackroom. If they're included, enabling them in the WadFusion options menu in ZDoom will replace E1M8 or E1M4 in the Knee-Deep in the Dead episode.
+[Tech Gone Bad](https://doomwiki.org/wiki/Tech_Gone_Bad) and [Phobos Mission Control](https://doomwiki.org/wiki/Phobos_Mission_Control) are levels that were made as a warm-up exercise for John Romero's cancelled game, Blackroom. If they're included, enabling them in the WadFusion options menu will replace E1M8 or E1M4 in the Knee-Deep in the Dead episode.
+
+## Recommended WADs
+
+WadFusion will work with most versions of the supported WADs, but in order to generate a "best" version of `doom_fusion.ipk3`, it is recommended to use the following versions:
+
+| WAD                       | WAD file                | MD5 hash code                      | Where to get                                                                                                                     |
+| :------------------------ | :---------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| DOOM                      | `DOOM.WAD`              | `1cd63c5ddff1bf8ce844237f580e9cf3` | Mail order from id Software in 1993                                                                                              |
+| The Ultimate DOOM         | `DOOM.WAD`              | `c4fe9fd920207691a9f493668e0a2083` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (DOS) (rename to `DOOMU.WAD`) |
+| DOOM II                   | `DOOM2.WAD`             | `25e1459ca71d321525f84628f45ca8cd` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (DOS)                         |
+| TNT: Evilution            | `TNT.WAD`               | `4e158d9953c79ccf97bd0663244cc6b6` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (DOS)                         |
+| The Plutonia Experiment   | `PLUTONIA.WAD`          | `75c8cf89566741fa9d22447604053bd7` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (DOS)                         |
+| Master Levels for DOOM II | `masterlevels.wad`      | `ab3ce78e085e50a61f6dff46aabbfaeb` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| No Rest for the Living    | `nerve.wad`             | `23422eb42833ac7b0dd59c0c7ae18a6f` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| SIGIL                     | `sigil.wad`             | `08ee05388c137db5f5d7996e89425b95` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| SIGIL II                  | `sigil2.wad`            | `953f65cf079d0ba9a25be2c407da7ec1` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| Legacy of Rust            | `id1.wad`               | `713c5a3c1734b1d55b2813a3dd0136d9` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| id Deathmatch Pack #1     | `iddm1.wad`             | `cb92010b8ec05f8924ac966a8ed95b74` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| DOOM + DOOM II Extras     | `extras.wad`            | `2e76d93d52ef64fb9db3cee2437c686b` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (KEX)                         |
+| SIGIL + Buckethead        | `SIGIL_V1_23_REG.wad`   | `25c5835ec5352c9587440b7403ff6e8f` | [The Romero Shop](https://romero.com/sigil)                                                                                      |
+| SIGIL II + THORR          | `SIGIL_II_MP3_V1_0.WAD` | `732fb8f9c470e857189c206a9279af74` | [The Romero Shop](https://romero.com/sigil)                                                                                      |
+| Tech Gone Bad             | `e1m8b.wad`             | `86e94729257b94f982dbe3e3a81e2679` | [/idgames archive](https://www.doomworld.com/idgames/levels/doom/Ports/d-f/e1m8b)                                                |
+| Phobos Mission Control    | `e1m4b.wad`             | `ffce7f3a2e42ba779e211c4cf17fa591` | [/idgames archive](https://www.doomworld.com/idgames/levels/doom/Ports/d-f/e1m4b)                                                |
+| Sewers                    | `SEWERS.WAD`            | `7b30cba8c9a79405a7240fd68eb013a5` | [ClassicDoom.com](https://classicdoom.com/xboxspec.htm)                                                                          |
+| Betray                    | `BETRAY.WAD`            | `2bb99c282627b58ef3c753a9544255b9` | [ClassicDoom.com](https://classicdoom.com/xboxspec.htm)                                                                          |
 
 ## Master Levels Rejects
 
-The WadFusion options menu in ZDoom has an option to switch the Master Levels between the official 21 map order as arranged by Xaser, and the expanded 43 map order that incorporates the rejected and related bonus maps, and arranges them into sub-episode campaigns.
+The WadFusion options menu has an option to switch the Master Levels between the official 21 map order as arranged by Xaser, and the expanded 43 map order that incorporates the rejected and related bonus maps, and arranges them into sub-episode campaigns.
 
-For the Master Levels Rejects to be integrated, *all* of the following WADs must be included:
-- Master Levels for DOOM II (the original 20 WAD files, or `masterlevels.wad` from the [KEX-based re-release](https://doomwiki.org/wiki/Doom_%2B_Doom_II))
-- DOOM II (`doom2.wad`)
-- The Ultimate DOOM (`doom.wad`)
-- [The C.P.U.](https://www.doomworld.com/idgames/levels/doom2/a-c/cpu) (`cpu.wad`)
-- [Device One](https://www.doomworld.com/idgames/levels/doom2/d-f/device_1) (`device_1.wad`)
-- [The D.M.Z.](https://www.doomworld.com/idgames/levels/doom2/d-f/dmz) (`dmz.wad`)
-- [The Fury](https://www.doomworld.com/idgames/levels/doom2/a-c/cdk_fury) (`cdk_fury.wad`)
-- [The Enemy Inside](https://www.doomworld.com/idgames/levels/doom2/d-f/e_inside) (`e_inside.wad`)
-- [The Hive](https://www.doomworld.com/idgames/levels/doom2/g-i/hive) (`hive.wad`)
-- [Doom2 Map14 Homage](https://www.doomworld.com/idgames/levels/doom2/s-u/twm01) (`twm01.wad`)
-- [Mines of Titan](https://www.doomworld.com/idgames/levels/doom2/m-o/mines2) (`mines.wad`)
-- [The Titan Anomaly](https://www.doomworld.com/idgames/levels/doom2/a-c/anomaly) (`anomaly.wad`)
-- [The Farside of Titan](https://www.doomworld.com/idgames/levels/doom2/d-f/farside) (`farside.wad`)
-- [Trouble on Titan](https://www.doomworld.com/idgames/levels/doom2/s-u/trouble) (`trouble.wad`)
-- [Dante's Gate](https://www.doomworld.com/idgames/levels/doom2/d-f/dante25) (`dante25.wad`)
-- [Crossing Acheron](https://www.doomworld.com/idgames/levels/doom2/a-c/achron22) (`achron22.wad`)
-- [Caball](https://doomshack.org/uploads/caball.zip) (`caball.wad`)
-- [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) (`udtwid.wad`)
+To integrate the Master Levels Rejects, you must include The Ultimate DOOM, DOOM II, Master Levels for DOOM II (either the original 20 WAD files, or preferably `masterlevels.wad` from the KEX-based re-release), and *all* of the following WADs:
+
+| Link to WAD                                                                              | WAD file                | MD5 hash code                      |
+| :--------------------------------------------------------------------------------------- | :---------------------- | :--------------------------------- |
+| [The C.P.U.](https://www.doomworld.com/idgames/levels/doom2/a-c/cpu)                     | `cpu.wad`               | `B346E39E3A3F60F9F6B09A3C68C00764` |
+| [Device One](https://www.doomworld.com/idgames/levels/doom2/d-f/device_1)                | `device_1.wad`          | `7A377BF109886CAAEA83C5786AE1F711` |
+| [The D.M.Z.](https://www.doomworld.com/idgames/levels/doom2/d-f/dmz)                     | `dmz.wad`               | `EBC27A4459C932067A80B0EC01DCF122` |
+| [The Fury](https://www.doomworld.com/idgames/levels/doom2/a-c/cdk_fury)                  | `cdk_fury.wad`          | `149A79C153D7031F685B83D4D7379385` |
+| [The Enemy Inside](https://www.doomworld.com/idgames/levels/doom2/d-f/e_inside)          | `e_inside.wad`          | `185FEA1F3CE7224C83620D29F6B36FD3` |
+| [The Hive](https://www.doomworld.com/idgames/levels/doom2/g-i/hive)                      | `hive.wad`              | `4CB405B9AE5BB04FD80DFC81ECB9960A` |
+| [Doom2 Map14 Homage](https://www.doomworld.com/idgames/levels/doom2/s-u/twm01)           | `TWM01.WAD`             | `F9134BB5449BC17A2C37CB207281CD95` |
+| [Mines of Titan](https://www.doomworld.com/idgames/levels/doom2/m-o/mines2)              | `MINES.WAD`             | `B4E975D9A824759A45302AD3D3894DCC` |
+| [The Titan Anomaly](https://www.doomworld.com/idgames/levels/doom2/a-c/anomaly)          | `anomaly.wad`           | `00A605251B95E4A4853D09CFBC151399` |
+| [The Farside of Titan](https://www.doomworld.com/idgames/levels/doom2/d-f/farside)       | `FARSIDE.WAD`           | `857933D2018470D49A15381F34C124B6` |
+| [Trouble on Titan](https://www.doomworld.com/idgames/levels/doom2/s-u/trouble)           | `TROUBLE.WAD`           | `EE7A0ADF490B495DE1A4AD8388DBE3C6` |
+| [Dante's Gate](https://www.doomworld.com/idgames/levels/doom2/d-f/dante25)               | `DANTE25.WAD`           | `BB8269F8EC1FE408EF946E48B2B185D1` |
+| [Crossing Acheron](https://www.doomworld.com/idgames/levels/doom2/a-c/achron22)          | `ACHRON22.WAD`          | `58FDAFEFD08CB2E1841AA49052FF78BD` |
+| [Caball](https://doomshack.org/uploads/caball.zip)                                       | `CABALL.WAD`            | `A4A7E7B33233014601E1BA74C5DAE1FE` |
+| [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) | `UDTWiD.wad`            | `C04696A6ABDA5ED345B040065E2934C6` |
 
 **Note: [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!**
 
@@ -85,61 +110,25 @@ For the Master Levels Rejects to be integrated, *all* of the following WADs must
 
 WadFusion features optional "Full Run" modes. When enabled, finishing an episode will immediately start the next episode. If an episode isn't available, it will be skipped over.
 
-It can be enabled from the WadFusion options menu in ZDoom, and is available in three configurations:
+It can be enabled from the WadFusion options menu, and is available in three configurations:
 
-<details>
-<summary>Default order</summary>
+| Default order           | Release Order           | Chronological order     |
+| ----------------------- | ----------------------- | ----------------------- |
+| Knee-Deep in the Dead   | Knee-Deep in the Dead   | Knee-Deep in the Dead   |
+| The Shores of Hell      | The Shores of Hell      | The Shores of Hell      |
+| Inferno                 | Inferno                 | Inferno                 |
+| Thy Flesh Consumed      | Hell On Earth           | Thy Flesh Consumed      |
+| SIGIL                   | Thy Flesh Consumed      | SIGIL                   |
+| SIGIL II                | Master Levels           | SIGIL II                |
+| Hell On Earth           | TNT: Evilution          | Hell On Earth           |
+| Master Levels           | The Plutonia Experiment | No Rest for the Living  |
+| No Rest for the Living  | No Rest for the Living  | Master Levels           |
+| The Vulcan Abyss        | SIGIL                   | TNT: Evilution          |
+| Counterfeit Eden        | SIGIL II                | The Plutonia Experiment |
+| TNT: Evilution          | The Vulcan Abyss        | The Vulcan Abyss        |
+| The Plutonia Experiment | Counterfeit Eden        | Counterfeit Eden        |
 
-  - Knee-Deep in the Dead
-  - The Shores of Hell
-  - Inferno
-  - Thy Flesh Consumed
-  - SIGIL
-  - SIGIL II
-  - Hell On Earth
-  - Master Levels
-  - No Rest for the Living
-  - The Vulcan Abyss
-  - Counterfeit Eden
-  - TNT: Evilution
-  - The Plutonia Experiment
-</details>
-
-<details>
-<summary>Release order</summary>
-
-  - Knee-Deep in the Dead
-  - The Shores of Hell
-  - Inferno
-  - Hell On Earth
-  - Thy Flesh Consumed
-  - Master Levels
-  - TNT: Evilution
-  - The Plutonia Experiment
-  - No Rest for the Living
-  - SIGIL
-  - SIGIL II
-  - The Vulcan Abyss
-  - Counterfeit Eden
-</details>
-
-<details>
-<summary>Chronological order</summary>
-
-  - Knee-Deep in the Dead
-  - The Shores of Hell
-  - Inferno
-  - Thy Flesh Consumed
-  - SIGIL
-  - SIGIL II
-  - Hell On Earth
-  - No Rest for the Living
-  - Master Levels
-  - TNT: Evilution
-  - The Plutonia Experiment
-  - The Vulcan Abyss
-  - Counterfeit Eden
-</details>
+Whether or not the Master Levels are included in a Full Run can also be toggled from the WadFusion options menu.
 
 ## Absolute Beginner's Guide
 
