@@ -35,6 +35,7 @@ extend class WadFusionStatusBar
 		let altHUDMugshot         = CVar.FindCVar("wf_hud_alt_mugshot").GetInt() >= 2;
 		let altHUDMugshotReplace  = CVar.FindCVar("wf_hud_alt_mugshot").GetInt() == 1;
 		let altHUDHealth          = CVar.FindCVar("wf_hud_alt_health").GetBool();
+		let altHUDLowerHealth     = CVar.FindCVar("wf_hud_alt_lowerhealth").GetBool();
 		let altHUDArmor           = CVar.FindCVar("wf_hud_alt_armor").GetBool();
 		let altHUDAmmo            = CVar.FindCVar("wf_hud_alt_ammo").GetBool();
 		let altHUDAmmoInv         = CVar.FindCVar("wf_hud_alt_ammoinv").GetBool();
@@ -76,7 +77,13 @@ extend class WadFusionStatusBar
 		
 		let hasBerserk = CPlayer.mo.FindInventory("PowerStrength");
 		
-		int health = CPlayer.Health;
+		int health = CPlayer.mo.Health;
+		
+		if ( !altHUDLowerHealth )
+		{
+			if ( health <= 0 )
+				health = 0;
+		}
 		
 		if ( altHUDHealth )
 		{
@@ -603,7 +610,7 @@ extend class WadFusionStatusBar
 	int GetHealthColor()
 	{
 		int healthColor = Font.CR_UNTRANSLATED;
-		int health = CPlayer.Health;
+		int health = CPlayer.mo.Health;
 		int maxHealth = CPlayer.mo.GetMaxHealth(true);
 		
 		healthColor =

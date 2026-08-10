@@ -190,6 +190,7 @@ extend class WadFusionStaticHandler
 		CVar.FindCVar("wf_hud_alt").ResetToDefault();
 		CVar.FindCVar("wf_hud_alt_mugshot").ResetToDefault();
 		CVar.FindCVar("wf_hud_alt_health").ResetToDefault();
+		CVar.FindCVar("wf_hud_alt_lowerhealth").ResetToDefault();
 		CVar.FindCVar("wf_hud_alt_armor").ResetToDefault();
 		CVar.FindCVar("wf_hud_alt_ammo").ResetToDefault();
 		CVar.FindCVar("wf_hud_alt_ammoinv").ResetToDefault();

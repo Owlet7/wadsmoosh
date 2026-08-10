@@ -166,6 +166,7 @@ nosave bool wf_hud_ultrawide_fullscreen = true;
 nosave bool wf_hud_alt = false;
 nosave int wf_hud_alt_mugshot = 1;
 nosave bool wf_hud_alt_health = true;
+nosave bool wf_hud_alt_lowerhealth = true;
 nosave bool wf_hud_alt_armor = true;
 nosave bool wf_hud_alt_ammo = true;
 nosave bool wf_hud_alt_ammoinv = true;

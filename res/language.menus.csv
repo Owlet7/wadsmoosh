@@ -100,6 +100,7 @@ WF_MENU_HUD_ALT,,,Use WadFusion’s alternate fullscreen HUD,,,,Nutze WadFusion'
 WF_MENU_HUD_ALT_MUGSHOT,,,Show mug shot,,,,Zeige Gesicht,,,,,,,,,Mostra il volto,,,,,Pokaż portret,,,,Отображать портрет,,,,,
 WF_MENU_HUD_ALT_MUGSHOT_OPTVAL1,,,Yes (replace medikit),,,,Ja (Ersetzt Medikit),,,,,,,,,Sì (al posto del Medikit),,,,,Tak (wymienić apteczkę),,,,Да (заменять аптечку),,,,,
 WF_MENU_HUD_ALT_HEALTH,,,Show health,,,,Zeige Gesundheit,,,,,,,,,Mostra salute,,,,,Pokaż zdrowie,,,,Отображать здоровье,,,,,
+WF_MENU_HUD_ALT_LOWERHEALTH,,,Show negative health,,,,,,,,,,,,,,,,,,,,,,Отображать отрицательное здоровье,,,,,
 WF_MENU_HUD_ALT_ARMOR,,,Show armor,Show armour,,,Zeige Rüstung,,,,,,,,,Mostra armatura,,,,,Pokaż zbroję,,,,Отображать броню,,,,,
 WF_MENU_HUD_ALT_AMMO,,,Show ammo,,,,Zeige Munition,,,,,,,,,Mostra munizioni,,,,,Pokaż amunicję,,,,Отображать патроны,,,,,
 WF_MENU_HUD_ALT_AMMOINV,,,Show ammo list,,,,Zeige Munitions-Liste,,,,,,,,,Mostra elenco munizioni,,,,,Pokaż listę amunicji,,,,Отображать список патронов,,,,,

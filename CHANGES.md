@@ -13,9 +13,11 @@
     compatibility option and have a persistent inventory through all of the
     Master Levels, or through all of the 220 levels in Full Run.
 - Players will now disconnect from a server at the end of a Full Run.
+- Added "Show negative health" option for the alternate fullscreen HUD.
 - Added support for "sigil_mp3" and "sigil2_shreds" filenames.
 - Added Italian localisation. (by STHX)
 - Added partial Dutch localisation. @BVH1999
+- Updated German localisation. @Meerschweinmann
 
 ## [WadFusion 1.6.1](https://github.com/Owlet7/wadfusion/releases/tag/v1.6.1) — [18 May 2026](https://github.com/Owlet7/wadfusion/tree/v1.6.1)
 [**Full Changelog**](https://github.com/Owlet7/wadfusion/compare/v1.6.0...v1.6.1)
