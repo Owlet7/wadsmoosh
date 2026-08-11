@@ -59,7 +59,7 @@ For SIGIL and SIGIL II, all the filenames for different releases of those WADs a
 
 WadFusion will work with most versions of the supported WADs, but in order to generate a "best" version of `doom_fusion.ipk3`, it is recommended to use the following versions ([Master Levels Rejects](#master-levels-rejects) listed separately):
 
-| WAD                       | WAD file                | MD5 hash code                      | Where to get                                                                                                                     |
+| WAD                       | WAD filename            | MD5 hash code                      | Where to get                                                                                                                     |
 | :------------------------ | :---------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
 | DOOM                      | `DOOM.WAD`              | `1cd63c5ddff1bf8ce844237f580e9cf3` | Mail order from id Software in 1993                                                                                              |
 | The Ultimate DOOM         | `DOOM.WAD`              | `c4fe9fd920207691a9f493668e0a2083` | [GOG](https://www.gog.com/en/game/doom_doom_ii) / [Steam](https://store.steampowered.com/app/2280) (DOS) (rename to `DOOMU.WAD`) |
