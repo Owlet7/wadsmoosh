@@ -26,50 +26,50 @@ extend class WadFusionStaticHandler
 		
 		if ( mapName.Left(10) == "wf_endgame" )
 		{
-			String endMap = mapName.Mid(11);
-			int fullRun = CVar.FindCVar("wf_fullrun").GetInt();
-			let fullRunMasterLevels = CVar.FindCVar("wf_fullrun_ml").GetBool();
-			let fullRunCast = CVar.FindCVar("wf_fullrun_cast").GetBool();
-			let fullRunLoop = CVar.FindCVar("wf_fullrun_loop").GetBool();
-			
 			if ( Level.MapTime == 0 )
 			{
-				String endGameFullRun1[] =
-				{
-					"e1m8",
-					"e2m8",
-					"e3m8",
-					"e4m8",
-					"e5m8",
-					"e6m8",
-					"map30",
-					"masterlevels",
-					"nv_map08",
-					"lr_map07",
-					"lr_map14",
-					"tn_map30",
-					"pl_map30"
-				};
-				
-				String newGameFullRun1[] =
-				{
-					"e1m1",
-					"e2m1",
-					"e3m1",
-					"e4m1",
-					"e5m1",
-					"e6m1",
-					"map01",
-					"ml_map01",
-					"nv_map01",
-					"lr_map01",
-					"lr_map08",
-					"tn_map01",
-					"pl_map01"
-				};
+				String endMap = mapName.Mid(11);
+				int fullRun = CVar.FindCVar("wf_fullrun").GetInt();
+				let fullRunMasterLevels = CVar.FindCVar("wf_fullrun_ml").GetBool();
+				let fullRunCast = CVar.FindCVar("wf_fullrun_cast").GetBool();
+				let fullRunLoop = CVar.FindCVar("wf_fullrun_loop").GetBool();
 				
 				if ( fullRun == 1 )
 				{
+					String endGameFullRun1[] =
+					{
+						"e1m8",
+						"e2m8",
+						"e3m8",
+						"e4m8",
+						"e5m8",
+						"e6m8",
+						"map30",
+						"masterlevels",
+						"nv_map08",
+						"lr_map07",
+						"lr_map14",
+						"tn_map30",
+						"pl_map30"
+					};
+					
+					String newGameFullRun1[] =
+					{
+						"e1m1",
+						"e2m1",
+						"e3m1",
+						"e4m1",
+						"e5m1",
+						"e6m1",
+						"map01",
+						"ml_map01",
+						"nv_map01",
+						"lr_map01",
+						"lr_map08",
+						"tn_map01",
+						"pl_map01"
+					};
+					
 					for ( int i = 0; i < endGameFullRun1.Size(); i++ )
 					{
 						bool fullRunEndLoop = fullRunLoop && i == endGameFullRun1.Size() - 1;
@@ -93,42 +93,42 @@ extend class WadFusionStaticHandler
 					}
 				}
 				
-				String endGameFullRun2[] =
-				{
-					"e1m8",
-					"e2m8",
-					"e3m8",
-					"map30",
-					"e4m8",
-					"masterlevels",
-					"tn_map30",
-					"pl_map30",
-					"nv_map08",
-					"e5m8",
-					"e6m8",
-					"lr_map07",
-					"lr_map14"
-				};
-				
-				String newGameFullRun2[] =
-				{
-					"e1m1",
-					"e2m1",
-					"e3m1",
-					"map01",
-					"e4m1",
-					"ml_map01",
-					"tn_map01",
-					"pl_map01",
-					"nv_map01",
-					"e5m1",
-					"e6m1",
-					"lr_map01",
-					"lr_map08"
-				};
-				
 				if ( fullRun == 2 )
 				{
+					String endGameFullRun2[] =
+					{
+						"e1m8",
+						"e2m8",
+						"e3m8",
+						"map30",
+						"e4m8",
+						"masterlevels",
+						"tn_map30",
+						"pl_map30",
+						"nv_map08",
+						"e5m8",
+						"e6m8",
+						"lr_map07",
+						"lr_map14"
+					};
+					
+					String newGameFullRun2[] =
+					{
+						"e1m1",
+						"e2m1",
+						"e3m1",
+						"map01",
+						"e4m1",
+						"ml_map01",
+						"tn_map01",
+						"pl_map01",
+						"nv_map01",
+						"e5m1",
+						"e6m1",
+						"lr_map01",
+						"lr_map08"
+					};
+					
 					for ( int i = 0; i < endGameFullRun2.Size(); i++ )
 					{
 						bool fullRunEndLoop = fullRunLoop && i == endGameFullRun2.Size() - 1;
@@ -152,42 +152,42 @@ extend class WadFusionStaticHandler
 					}
 				}
 				
-				String endGameFullRun3[] =
-				{
-					"e1m8",
-					"e2m8",
-					"e3m8",
-					"e4m8",
-					"e5m8",
-					"e6m8",
-					"map30",
-					"nv_map08",
-					"masterlevels",
-					"tn_map30",
-					"pl_map30",
-					"lr_map07",
-					"lr_map14"
-				};
-				
-				String newGameFullRun3[] =
-				{
-					"e1m1",
-					"e2m1",
-					"e3m1",
-					"e4m1",
-					"e5m1",
-					"e6m1",
-					"map01",
-					"nv_map01",
-					"ml_map01",
-					"tn_map01",
-					"pl_map01",
-					"lr_map01",
-					"lr_map08"
-				};
-				
 				if ( fullRun == 3 )
 				{
+					String endGameFullRun3[] =
+					{
+						"e1m8",
+						"e2m8",
+						"e3m8",
+						"e4m8",
+						"e5m8",
+						"e6m8",
+						"map30",
+						"nv_map08",
+						"masterlevels",
+						"tn_map30",
+						"pl_map30",
+						"lr_map07",
+						"lr_map14"
+					};
+					
+					String newGameFullRun3[] =
+					{
+						"e1m1",
+						"e2m1",
+						"e3m1",
+						"e4m1",
+						"e5m1",
+						"e6m1",
+						"map01",
+						"nv_map01",
+						"ml_map01",
+						"tn_map01",
+						"pl_map01",
+						"lr_map01",
+						"lr_map08"
+					};
+					
 					for ( int i = 0; i < endGameFullRun3.Size(); i++ )
 					{
 						bool fullRunEndLoop = fullRunLoop && i == endGameFullRun3.Size() - 1;
@@ -210,78 +210,75 @@ extend class WadFusionStaticHandler
 						}
 					}
 				}
-			}
-			
-			String endGameEpisodes[] =
-			{
-				"e1m8",
-				"e2m8",
-				"e3m8",
-				"e4m8",
-				"e5m8",
-				"e6m8",
-				"map30",
-				"masterlevels",
-				"nv_map08",
-				"lr_map07",
-				"lr_map14",
-				"tn_map30",
-				"pl_map30"
-			};
-			
-			String endGameIntermission[] =
-			{
-				"Doom1_Ep1_Fusion_FullRun_Off",
-				"Doom1_Ep2_Fusion_FullRun_Off",
-				"Inter_Bunny_Fusion_FullRun_Off",
-				"Doom1_Ep4_Fusion_FullRun_Off",
-				"Doom1_Ep5_Fusion_FullRun_Off",
-				"Doom1_Ep6_Fusion_FullRun_Off",
-				"Inter_Cast",
-				"MasterLevels_End",
-				"Inter_Cast",
-				"Id1_Ep1_Fusion_FullRun_Off",
-				"Id1Cast",
-				"Inter_Cast_Tnt",
-				"Inter_Cast_Plutonia"
-			};
-			
-			String endGameIntermissionFullRun[] =
-			{
-				"Doom1_Ep1_Fusion_FullRun",
-				"Doom1_Ep2_Fusion_FullRun",
-				"Inter_Bunny_Fusion_FullRun",
-				"Doom1_Ep4_Fusion_FullRun",
-				"Doom1_Ep5_Fusion_FullRun",
-				"Doom1_Ep6_Fusion_FullRun",
-				"Inter_Cast_Fusion_FullRun",
-				"MasterLevels_End_Fusion_FullRun",
-				"Inter_Cast_Fusion_FullRun_NoCredits",
-				"Id1_Ep1_Fusion_FullRun",
-				"Id1Cast_Fusion_FullRun",
-				"Inter_Cast_Tnt_Fusion_FullRun",
-				"Inter_Cast_Plutonia_Fusion_FullRun"
-			};
-			
-			String endGameIntermissionFullRunNoCast[] =
-			{
-				"Doom1_Ep1_Fusion_FullRun",
-				"Doom1_Ep2_Fusion_FullRun",
-				"Inter_Bunny_Fusion_FullRun",
-				"Doom1_Ep4_Fusion_FullRun",
-				"Doom1_Ep5_Fusion_FullRun",
-				"Doom1_Ep6_Fusion_FullRun",
-				"Doom2_End_Fusion_FullRun_NoCast",
-				"MasterLevels_End_Fusion_FullRun_NoCast",
-				"Doom2_End_Fusion_FullRun_NoCast_NoCredits",
-				"Id1_Ep1_Fusion_FullRun",
-				"Id1_End_Fusion_FullRun_NoCast",
-				"Tnt_End_Fusion_FullRun_NoCast",
-				"Plutonia_End_Fusion_FullRun_NoCast"
-			};
-			
-			if ( Level.MapTime == 0 )
-			{
+				
+				String endGameEpisodes[] =
+				{
+					"e1m8",
+					"e2m8",
+					"e3m8",
+					"e4m8",
+					"e5m8",
+					"e6m8",
+					"map30",
+					"masterlevels",
+					"nv_map08",
+					"lr_map07",
+					"lr_map14",
+					"tn_map30",
+					"pl_map30"
+				};
+				
+				String endGameIntermission[] =
+				{
+					"Doom1_Ep1_Fusion_FullRun_Off",
+					"Doom1_Ep2_Fusion_FullRun_Off",
+					"Inter_Bunny_Fusion_FullRun_Off",
+					"Doom1_Ep4_Fusion_FullRun_Off",
+					"Doom1_Ep5_Fusion_FullRun_Off",
+					"Doom1_Ep6_Fusion_FullRun_Off",
+					"Inter_Cast",
+					"MasterLevels_End",
+					"Inter_Cast",
+					"Id1_Ep1_Fusion_FullRun_Off",
+					"Id1Cast",
+					"Inter_Cast_Tnt",
+					"Inter_Cast_Plutonia"
+				};
+				
+				String endGameIntermissionFullRun[] =
+				{
+					"Doom1_Ep1_Fusion_FullRun",
+					"Doom1_Ep2_Fusion_FullRun",
+					"Inter_Bunny_Fusion_FullRun",
+					"Doom1_Ep4_Fusion_FullRun",
+					"Doom1_Ep5_Fusion_FullRun",
+					"Doom1_Ep6_Fusion_FullRun",
+					"Inter_Cast_Fusion_FullRun",
+					"MasterLevels_End_Fusion_FullRun",
+					"Inter_Cast_Fusion_FullRun_NoCredits",
+					"Id1_Ep1_Fusion_FullRun",
+					"Id1Cast_Fusion_FullRun",
+					"Inter_Cast_Tnt_Fusion_FullRun",
+					"Inter_Cast_Plutonia_Fusion_FullRun"
+				};
+				
+				String endGameIntermissionFullRunNoCast[] =
+				{
+					"Doom1_Ep1_Fusion_FullRun",
+					"Doom1_Ep2_Fusion_FullRun",
+					"Inter_Bunny_Fusion_FullRun",
+					"Doom1_Ep4_Fusion_FullRun",
+					"Doom1_Ep5_Fusion_FullRun",
+					"Doom1_Ep6_Fusion_FullRun",
+					"Doom2_End_Fusion_FullRun_NoCast",
+					"MasterLevels_End_Fusion_FullRun_NoCast",
+					"Doom2_End_Fusion_FullRun_NoCast_NoCredits",
+					"Id1_Ep1_Fusion_FullRun",
+					"Id1_End_Fusion_FullRun_NoCast",
+					"Tnt_End_Fusion_FullRun_NoCast",
+					"Plutonia_End_Fusion_FullRun_NoCast"
+				};
+				
 				for ( int i = 0; i < endGameEpisodes.Size(); i++ )
 				{
 					if ( endMap == endGameEpisodes[i] )
