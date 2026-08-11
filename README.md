@@ -57,7 +57,7 @@ For SIGIL and SIGIL II, all the filenames for different releases of those WADs a
 
 ## Recommended WADs
 
-WadFusion will work with most versions of the supported WADs, but in order to generate a "best" version of `doom_fusion.ipk3`, it is recommended to use the following versions:
+WadFusion will work with most versions of the supported WADs, but in order to generate a "best" version of `doom_fusion.ipk3`, it is recommended to use the following versions ([Master Levels Rejects](#master-levels-rejects) listed separately):
 
 | WAD                       | WAD file                | MD5 hash code                      | Where to get                                                                                                                     |
 | :------------------------ | :---------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
@@ -88,21 +88,21 @@ To integrate the Master Levels Rejects, you must include The Ultimate DOOM, DOOM
 
 | Link to WAD                                                                              | WAD file                | MD5 hash code                      |
 | :--------------------------------------------------------------------------------------- | :---------------------- | :--------------------------------- |
-| [The C.P.U.](https://www.doomworld.com/idgames/levels/doom2/a-c/cpu)                     | `cpu.wad`               | `B346E39E3A3F60F9F6B09A3C68C00764` |
-| [Device One](https://www.doomworld.com/idgames/levels/doom2/d-f/device_1)                | `device_1.wad`          | `7A377BF109886CAAEA83C5786AE1F711` |
-| [The D.M.Z.](https://www.doomworld.com/idgames/levels/doom2/d-f/dmz)                     | `dmz.wad`               | `EBC27A4459C932067A80B0EC01DCF122` |
-| [The Fury](https://www.doomworld.com/idgames/levels/doom2/a-c/cdk_fury)                  | `cdk_fury.wad`          | `149A79C153D7031F685B83D4D7379385` |
-| [The Enemy Inside](https://www.doomworld.com/idgames/levels/doom2/d-f/e_inside)          | `e_inside.wad`          | `185FEA1F3CE7224C83620D29F6B36FD3` |
-| [The Hive](https://www.doomworld.com/idgames/levels/doom2/g-i/hive)                      | `hive.wad`              | `4CB405B9AE5BB04FD80DFC81ECB9960A` |
-| [Doom2 Map14 Homage](https://www.doomworld.com/idgames/levels/doom2/s-u/twm01)           | `TWM01.WAD`             | `F9134BB5449BC17A2C37CB207281CD95` |
-| [Mines of Titan](https://www.doomworld.com/idgames/levels/doom2/m-o/mines2)              | `MINES.WAD`             | `B4E975D9A824759A45302AD3D3894DCC` |
-| [The Titan Anomaly](https://www.doomworld.com/idgames/levels/doom2/a-c/anomaly)          | `anomaly.wad`           | `00A605251B95E4A4853D09CFBC151399` |
-| [The Farside of Titan](https://www.doomworld.com/idgames/levels/doom2/d-f/farside)       | `FARSIDE.WAD`           | `857933D2018470D49A15381F34C124B6` |
-| [Trouble on Titan](https://www.doomworld.com/idgames/levels/doom2/s-u/trouble)           | `TROUBLE.WAD`           | `EE7A0ADF490B495DE1A4AD8388DBE3C6` |
-| [Dante's Gate](https://www.doomworld.com/idgames/levels/doom2/d-f/dante25)               | `DANTE25.WAD`           | `BB8269F8EC1FE408EF946E48B2B185D1` |
-| [Crossing Acheron](https://www.doomworld.com/idgames/levels/doom2/a-c/achron22)          | `ACHRON22.WAD`          | `58FDAFEFD08CB2E1841AA49052FF78BD` |
-| [Caball](https://doomshack.org/uploads/caball.zip)                                       | `CABALL.WAD`            | `A4A7E7B33233014601E1BA74C5DAE1FE` |
-| [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) | `UDTWiD.wad`            | `C04696A6ABDA5ED345B040065E2934C6` |
+| [The C.P.U.](https://www.doomworld.com/idgames/levels/doom2/a-c/cpu)                     | `cpu.wad`               | `b346e39e3a3f60f9f6b09a3c68c00764` |
+| [Device One](https://www.doomworld.com/idgames/levels/doom2/d-f/device_1)                | `device_1.wad`          | `7a377bf109886caaea83c5786ae1f711` |
+| [The D.M.Z.](https://www.doomworld.com/idgames/levels/doom2/d-f/dmz)                     | `dmz.wad`               | `ebc27a4459c932067a80b0ec01dcf122` |
+| [The Fury](https://www.doomworld.com/idgames/levels/doom2/a-c/cdk_fury)                  | `cdk_fury.wad`          | `149a79c153d7031f685b83d4d7379385` |
+| [The Enemy Inside](https://www.doomworld.com/idgames/levels/doom2/d-f/e_inside)          | `e_inside.wad`          | `185fea1f3ce7224c83620d29f6b36fd3` |
+| [The Hive](https://www.doomworld.com/idgames/levels/doom2/g-i/hive)                      | `hive.wad`              | `4cb405b9ae5bb04fd80dfc81ecb9960a` |
+| [Doom2 Map14 Homage](https://www.doomworld.com/idgames/levels/doom2/s-u/twm01)           | `TWM01.WAD`             | `f9134bb5449bc17a2c37cb207281cd95` |
+| [Mines of Titan](https://www.doomworld.com/idgames/levels/doom2/m-o/mines2)              | `MINES.WAD`             | `b4e975d9a824759a45302ad3d3894dcc` |
+| [The Titan Anomaly](https://www.doomworld.com/idgames/levels/doom2/a-c/anomaly)          | `anomaly.wad`           | `00a605251b95e4a4853d09cfbc151399` |
+| [The Farside of Titan](https://www.doomworld.com/idgames/levels/doom2/d-f/farside)       | `FARSIDE.WAD`           | `857933d2018470d49a15381f34c124b6` |
+| [Trouble on Titan](https://www.doomworld.com/idgames/levels/doom2/s-u/trouble)           | `TROUBLE.WAD`           | `ee7a0adf490b495de1a4ad8388dbe3c6` |
+| [Dante's Gate](https://www.doomworld.com/idgames/levels/doom2/d-f/dante25)               | `DANTE25.WAD`           | `bb8269f8ec1fe408ef946e48b2b185d1` |
+| [Crossing Acheron](https://www.doomworld.com/idgames/levels/doom2/a-c/achron22)          | `ACHRON22.WAD`          | `58fdafefd08cb2e1841aa49052ff78bd` |
+| [Caball](https://doomshack.org/uploads/caball.zip)                                       | `CABALL.WAD`            | `a4a7e7b33233014601e1ba74c5dae1fe` |
+| [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) | `UDTWiD.wad`            | `c04696a6abda5ed345b040065e2934c6` |
 
 **Note: [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!**
 
