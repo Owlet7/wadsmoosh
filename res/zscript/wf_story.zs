@@ -20,22 +20,6 @@
 
 extend class WadFusionStaticHandler
 {
-	string GetSigilIntroMusic()
-	{
-		if ( CVar.FindCVar("wf_mus_sigilmp3").GetBool() )
-			return "s_introa";
-		else
-			return "s_intro";
-	}
-	
-	string GetSigil2IntroMusic()
-	{
-		if ( CVar.FindCVar("wf_mus_sigil2mp3").GetBool() )
-			return "s2_intra";
-		else
-			return "s2_intro";
-	}
-	
 	ui void HackMapsOverlay()
 	{
 		string mapName = Level.MapName.MakeLower();
@@ -49,7 +33,6 @@ extend class WadFusionStaticHandler
 	void NewGameIntro()
 	{
 		string mapName = Level.MapName.MakeLower();
-		let compatTitlePics = CVar.FindCVar("wf_compat_titlepics").GetBool();
 		
 		if ( mapName.Left(10) == "wf_newgame" )
 		{
@@ -123,10 +106,8 @@ extend class WadFusionStaticHandler
 				"Plutonia_Title_Intro"
 			};
 			
-			let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
-			let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+			let compatTitlePics = CVar.FindCVar("wf_compat_titlepics").GetBool();
 			
-			// this whole thing is very delicate and will break if anything at all is changed
 			if ( Level.MapTime == 0 )
 			{
 				for ( int i = 0; i < newGameEpisodes.Size(); i++ )
@@ -141,7 +122,7 @@ extend class WadFusionStaticHandler
 						else
 							intermission = newGameTitle[i];
 						
-						continue;
+						break;
 					}
 				}
 			}
@@ -149,7 +130,12 @@ extend class WadFusionStaticHandler
 			StoryStartIntermission();
 			
 			if ( compatTitlePics && Level.MapTime >= 1 || !compatTitlePics )
+			{
+				let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
+				let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
+				
 				Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
+			}
 		}
 	}
 	
@@ -176,29 +162,11 @@ extend class WadFusionStaticHandler
 					if ( mapSuffix == String.Format("%i", mlStoryPistolStarts[i]) )
 					{
 						Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
-						continue;
+						break;
 					}
 				}
 				
 				Level.ChangeLevel(nextMap, 0, CHANGELEVEL_NOINTERMISSION);
-			}
-		}
-	}
-	
-	void FullRunIntermission()
-	{
-		string mapName = Level.MapName.MakeLower();
-		
-		if ( mapName.Left(10) == "wf_endgame" )
-		{
-			StoryStartIntermission();
-			
-			if ( Level.MapTime >= 1 )
-			{
-				let isPistolStart = CVar.FindCVar("wf_compat_pistolstart").GetBool();
-				let pistolStart = CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_NOINTERMISSION;
-				
-				Level.ChangeLevel(nextMap, 0, isPistolStart ? pistolStart : CHANGELEVEL_NOINTERMISSION);
 			}
 		}
 	}
@@ -209,5 +177,21 @@ extend class WadFusionStaticHandler
 			Level.StartIntermission(intermission, FSTATE_INLEVELNOWIPE);
 		else if ( Level.MapTime == 0 )
 			EventHandler.SendNetworkEvent("IntermissionStoryEvent");
+	}
+	
+	string GetSigilIntroMusic()
+	{
+		if ( CVar.FindCVar("wf_mus_sigilmp3").GetBool() )
+			return "s_introa";
+		else
+			return "s_intro";
+	}
+	
+	string GetSigil2IntroMusic()
+	{
+		if ( CVar.FindCVar("wf_mus_sigil2mp3").GetBool() )
+			return "s2_intra";
+		else
+			return "s2_intro";
 	}
 }

@@ -53,7 +53,7 @@ class WadFusionStaticHandler : StaticEventHandler
 	override void WorldLoaded(WorldEvent e)
 	{
 		// reset global variables when starting maps where they're not used
-		string mapName = Level.MapName.MakeLower();
+		String mapName = Level.MapName.MakeLower();
 		if ( mapName.Left(10) != "wf_newgame" && mapName.Left(10) != "wf_endgame" && mapName.Left(8) != "wf_story" )
 		{
 			nextMap = "";
@@ -69,7 +69,7 @@ class WadFusionStaticHandler : StaticEventHandler
 		// and the rejects order, in which they shouldn't
 		if ( CVar.FindCVar("wf_compat_pistolstart").GetBool() )
 		{
-			string nextMapName = Level.NextMap.MakeLower();
+			String nextMapName = Level.NextMap.MakeLower();
 			
 			if ( nextMapName.Left(6) == "ml_map" )
 			{
@@ -81,29 +81,23 @@ class WadFusionStaticHandler : StaticEventHandler
 				
 				for ( int i = 0; i < mlNoPistolStarts.Size(); i++ )
 				{
-					if ( nextMapName.Mid(7) != String.Format("%i", mlNoPistolStarts[i]) )
+					if ( nextMapName.Mid(6) != String.Format("%02i", mlNoPistolStarts[i]) )
 					{
 						ForcePistolStart();
-						continue;
+						break;
 					}
 				}
 			}
 		}
-		
-		if ( CVar.FindCVar("wf_compat_nextmap").GetBool() )
-			FullRun(); // wf_fullrun.zs
 	}
 	
 	override void WorldTick()
 	{
-		if ( CVar.FindCVar("wf_compat_nextmap").GetBool() )
-			FullRunStory(); // wf_fullrun.zs
+		FullRun(); // wf_fullrun.zs
 		
 		// wf_story.zs
-		// hack for adding titlescreens and intermissions on newgame starts and "full runs"
 		NewGameIntro();
 		MasterLevelsStory();
-		FullRunIntermission();
 	}
 	
 	override void RenderOverlay(RenderEvent e)
@@ -131,10 +125,10 @@ class WadFusionStaticHandler : StaticEventHandler
 		}
 	}
 	
-	ui void DoChangeMusic(string music)
+	ui void DoChangeMusic(String music)
 	{
 		// define array of supported title themes
-		string titleMusic[] =
+		String titleMusic[] =
 		{
 			"d_intro",
 			"d_introa",
