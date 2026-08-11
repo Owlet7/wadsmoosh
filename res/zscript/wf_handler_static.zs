@@ -22,6 +22,7 @@ class WadFusionStaticHandler : StaticEventHandler
 {
 	String nextMap;
 	String intermission;
+	bool teeth;
 	
 	override void OnRegister()
 	{
@@ -58,6 +59,7 @@ class WadFusionStaticHandler : StaticEventHandler
 		{
 			nextMap = "";
 			intermission = "";
+			teeth = true;
 		}
 	}
 	
@@ -73,15 +75,17 @@ class WadFusionStaticHandler : StaticEventHandler
 			
 			if ( nextMapName.Left(6) == "ml_map" )
 			{
-				array<int> mlNoPistolStarts;
-				mlNoPistolStarts.PushV(21, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43);
+				array<int> mlPistolStarts;
+				mlPistolStarts.PushV(1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33);
 				
-				if ( CVar.FindCVar("wf_map_mlr").GetBool() )
-					mlNoPistolStarts.PushV(10, 11, 12, 13, 14, 15, 18, 20);
+				if ( !CVar.FindCVar("wf_map_mlr").GetBool() )
+					mlPistolStarts.PushV(10, 11, 12, 13, 14, 15, 18, 20);
+				if ( CVar.FindCVar("wf_map_mlr").GetBool() || !teeth )
+					mlPistolStarts.PushV(19);
 				
-				for ( int i = 0; i < mlNoPistolStarts.Size(); i++ )
+				for ( int i = 0; i < mlPistolStarts.Size(); i++ )
 				{
-					if ( nextMapName.Mid(6) != String.Format("%02i", mlNoPistolStarts[i]) )
+					if ( nextMapName.Mid(6) == String.Format("%02i", mlPistolStarts[i]) )
 					{
 						ForcePistolStart();
 						break;
@@ -89,6 +93,16 @@ class WadFusionStaticHandler : StaticEventHandler
 				}
 			}
 		}
+	}
+	
+	override void WorldLinePreActivated(WorldEvent e)
+	{
+		// return false if ml_map18 was exited using the normal exit.
+		// this is needed to support forcing a pistol start on ml_map19,
+		// without also forcing it for ml_map21
+		String mapName = Level.MapName.MakeLower();
+		if ( mapName == "ml_map18" && e.ActivatedLine.Special == 243 )
+			teeth = false;
 	}
 	
 	override void WorldTick()
