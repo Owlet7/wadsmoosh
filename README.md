@@ -106,7 +106,7 @@ To integrate the Master Levels Rejects, you must include The Ultimate DOOM, DOOM
 | [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) | `UDTWiD.wad`            | `c04696a6abda5ed345b040065e2934c6` |
 
 > [!CAUTION]
-> [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!**
+> [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!
 
 ## Full Run Mode
 
@@ -130,7 +130,8 @@ It can be enabled from the WadFusion options menu, and is available in three con
 | TNT: Evilution          | The Vulcan Abyss        | The Vulcan Abyss        |
 | The Plutonia Experiment | Counterfeit Eden        | Counterfeit Eden        |
 
-Whether or not the Master Levels are included in a Full Run can also be toggled from the WadFusion options menu.
+> [!TIP]
+> Whether or not the Master Levels are included in a Full Run can also be toggled from the WadFusion options menu.
 
 ## Absolute Beginner's Guide
 
