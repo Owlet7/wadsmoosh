@@ -6,7 +6,8 @@ It's fine if you don't have all of the DOOM games, e.g. you have DOOM II but not
 
 If you just bought these games from [GOG](https://www.gog.com/en/game/doom_doom_ii), or [Steam](https://store.steampowered.com/app/2280/), etc., and you aren't familiar with ZDoom and DOOM modding, see the [**Absolute Beginner's Guide**](#absolute-beginners-guide) section below.
 
-### Note: WadFusion requires UZDoom or LZDoom. It will not work with other engines.
+> [!NOTE]
+> WadFusion requires UZDoom or LZDoom. It will not work with other engines.
 
 ## Usage
 
@@ -104,7 +105,8 @@ To integrate the Master Levels Rejects, you must include The Ultimate DOOM, DOOM
 | [Caball](https://doomshack.org/uploads/caball.zip)                                       | `CABALL.WAD`            | `a4a7e7b33233014601e1ba74c5dae1fe` |
 | [Ultimate Doom The Way id Did](https://www.doomworld.com/idgames/levels/doom/s-u/udtwid) | `UDTWiD.wad`            | `c04696a6abda5ed345b040065e2934c6` |
 
-**Note: [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!**
+> [!CAUTION]
+> [Works of the Masters](https://jp.itch.io/deluxe-master-levels) is not supported by WadFusion! Do not use the WADs included with it!**
 
 ## Full Run Mode
 
@@ -141,7 +143,7 @@ Whether or not the Master Levels are included in a Full Run can also be toggled 
 5. A terminal window will show which episodes can be extracted. Press Y and then Enter to proceed.
 6. The terminal window will show progress as it generates the IPK3. When it finishes, press Enter to close the window. You should now have a file in the WadFusion folder called `doom_fusion.ipk3`.
 7. Download [UZDoom](https://zdoom.org/downloads) and extract it to a folder.
-8. Copy the `doom_fusion.ipk3` and `doom_fusion_widescreen_gfx.pk3` files to UZDoom's folder.
+8. Move the `doom_fusion.ipk3` and `doom_fusion_widescreen_gfx.pk3` files to UZDoom's folder.
 9. Launch UZDoom and play!
 
 ## Acknowledgements
